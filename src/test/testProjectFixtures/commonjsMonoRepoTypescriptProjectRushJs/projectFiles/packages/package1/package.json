@@ -1,0 +1,50 @@
+{
+	"name": "@testproject/package1",
+	"description": "This repo shows an example of a simple Typescript project",
+	"version": "1.0.0",
+	"type": "commonjs",
+	"main": "src/main.ts",
+	"types": "src/main.ts",
+	"publishConfig": {
+		"main": "dist/main.js",
+		"types": "dist/main.d.ts",
+		"directory": "packagePublishDir"
+	},
+	"license": "MIT",
+	"scripts": {
+		"compile": "tsc",
+		"tsNodeShowConfig": "ts-node --showConfig",
+		"start": "tsc && node --no-warnings --experimental-specifier-resolution=node ./dist/main.js",
+		"start:dev": "NODE_OPTIONS='--no-warnings --experimental-specifier-resolution=node' ts-node-esm ./src/main.ts",
+		"test": "jest"
+	},
+	"dependencies": {
+		"axios": "^0.26.1",
+		"@testproject/package2": "workspace:1.0.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.16.7",
+		"@babel/preset-env": "^7.16.7",
+		"@babel/preset-typescript": "^7.16.7",
+		"@types/jest": "^27.4.0",
+		"babel-jest": "^27.4.6",
+		"jest": "^27.4.6",
+		"@swc/cli": "^0.1.57",
+		"@swc/core": "^1.2.183",
+		"@types/config": "^0.0.41",
+		"@types/fs-extra": "^9.0.13",
+		"@types/node": "^17.0.33",
+		"@typescript-eslint/eslint-plugin": "^5.46.1",
+		"@typescript-eslint/parser": "^5.23.0",
+		"eslint": "^8.15.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-import-resolver-typescript": "^2.7.1",
+		"eslint-plugin-anti-trojan-source": "^1.1.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"prettier": "^2.6.2",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.9.4",
+		"ts-node": "^10.9.1"
+	}
+}

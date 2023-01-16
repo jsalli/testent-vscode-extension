@@ -1,0 +1,25 @@
+[Running] Function getUserDetailsById
+===== Input set number 0 =====
+Function inputs:
+userId:  -1
+Function output:
+Function throws an exception:
+Class: Error
+Message: Given user ID is invalid. Got: -1, expected value >=0
+
+===== Input set number 1 =====
+Function inputs:
+userId:  0
+Function output:
+Function throws an exception:
+Class: Error
+Message: Request failed with status code 404
+
+===== Input set number 2 =====
+Function inputs:
+userId:  1
+Function output:
+{ username: 'Bret', name: 'Leanne Graham', email: 'Sincere@april.biz' }
+
+
+[Done] exited with code=0

@@ -1,0 +1,37 @@
+{
+	"name": "@testproject/package2",
+	"version": "1.0.0",
+	"type": "commonjs",
+	"publishConfig": {
+		"main": "dist/createMessage.js",
+		"types": "dist/createMessage.d.ts"
+	},
+	"main": "src/createMessage.ts",
+	"types": "src/createMessage.ts",
+	"scripts": {
+		"clean": "rimraf ./dist/* tsconfig.tsbuildinfo package.tgz *.log .swc/*",
+		"compile": "swc src -d dist",
+		"build": "rushx compile && rushx build-types",
+		"build-types": "tsc -p tsconfig.build.types.json",
+		"test": "echo 'no test'",
+		"up-dependencies": "pnpm up"
+	},
+	"devDependencies": {
+		"@swc/cli": "^0.1.57",
+		"@swc/core": "^1.2.183",
+		"@types/config": "^0.0.41",
+		"@types/fs-extra": "^9.0.13",
+		"@types/node": "^17.0.33",
+		"@typescript-eslint/eslint-plugin": "^5.46.1",
+		"@typescript-eslint/parser": "^5.23.0",
+		"eslint": "^8.15.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-import-resolver-typescript": "^2.7.1",
+		"eslint-plugin-anti-trojan-source": "^1.1.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"prettier": "^2.6.2",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.9.4"
+	}
+}

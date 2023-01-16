@@ -1,0 +1,42 @@
+[
+  {
+    "recId": {
+      "folderPath": "/home/juha/workspace/testent/simple-typescript-project-example/src/utils/stuff",
+      "fileName": "newLineModification.ts",
+      "functionName": "cutFromNewLine",
+      "unitTestId": "agfsv289q"
+    },
+    "recordings": [
+      {
+        "varName": "cutFromNewLine",
+        "async": false,
+        "functionDetails": {
+          "type": "mainFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "text",
+                "value": "FILL \n THIS",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              }
+            ],
+            "callId": 1,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "varName": "__orig_output",
+              "value": "FILL ",
+              "overrides": null,
+              "type": "RecordedPrimitive",
+              "valueType": "string"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

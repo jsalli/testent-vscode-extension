@@ -1,0 +1,31 @@
+[Running] Function createMessage
+===== Input set number 0 =====
+Function inputs:
+email:  
+name:  John Smith
+username:  jsmith
+Function output:
+Function throws an exception:
+Class: Error
+Message: email is empty
+
+===== Input set number 1 =====
+Function inputs:
+email:  jsmith@somewhere.com
+name:  
+username:  jsmith
+Function output:
+Function throws an exception:
+Class: Error
+Message: User's name is empty
+
+===== Input set number 2 =====
+Function inputs:
+email:  jsmith@somewhere.com
+name:  John Smith
+username:  jsmith
+Function output:
+User with email: jsmith@somewhere.com has name: "John Smith". This Her/his username is 'jsmith'
+
+
+[Done] exited with code=0

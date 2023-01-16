@@ -1,0 +1,23 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "/home/juha/workspace/auto-tester/auto-tester-v3"
+  },
+  "1 error pnpm": {
+    "code": "ELIFECYCLE",
+    "errno": "ENOENT",
+    "syscall": "spawn",
+    "file": "sh",
+    "pkgid": "autotester-vscode-extension@0.0.1",
+    "stage": "build",
+    "script": "webpack --mode development",
+    "pkgname": "autotester-vscode-extension",
+    "err": {
+      "name": "pnpm",
+      "message": "autotester-vscode-extension@0.0.1 build: `webpack --mode development`\nspawn ENOENT",
+      "code": "ELIFECYCLE",
+      "stack": "pnpm: autotester-vscode-extension@0.0.1 build: `webpack --mode development`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/home/juha/.nvm/versions/node/v16.13.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.29.1/node_modules/pnpm/dist/pnpm.cjs:92187:22)\n    at ChildProcess.emit (node:events:390:28)\n    at maybeClose (node:internal/child_process:1064:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:301:5)"
+    }
+  },
+  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
+}

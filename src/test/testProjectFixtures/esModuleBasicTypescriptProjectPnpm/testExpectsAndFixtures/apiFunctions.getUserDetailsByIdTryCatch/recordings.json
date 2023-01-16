@@ -1,0 +1,263 @@
+[
+  {
+    "recId": {
+      "folderPath": "/home/juha/workspace/testent/simple-typescript-project-example/src",
+      "fileName": "apiFunctions.ts",
+      "functionName": "getUserDetailsByIdTryCatch",
+      "unitTestId": "ade4j1agc"
+    },
+    "recordings": [
+      {
+        "varName": "getUserDetailsByIdTryCatch",
+        "async": true,
+        "functionDetails": {
+          "type": "mainFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "userId",
+                "value": -1,
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "number"
+              }
+            ],
+            "callId": 1,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "mainFunction": true,
+              "type": "RecordedError",
+              "errorConstructorName": "Error",
+              "errorMessage": "Given user ID is invalid. Got: -1, expected value >=0"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "recId": {
+      "folderPath": "/home/juha/workspace/testent/simple-typescript-project-example/src",
+      "fileName": "apiFunctions.ts",
+      "functionName": "getUserDetailsByIdTryCatch",
+      "unitTestId": "a9lv5pv4h"
+    },
+    "recordings": [
+      {
+        "varName": "getUserDetailsByIdTryCatch",
+        "async": true,
+        "functionDetails": {
+          "type": "mainFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "userId",
+                "value": 0,
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "number"
+              }
+            ],
+            "callId": 1,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "mainFunction": true,
+              "type": "RecordedError",
+              "errorConstructorName": "Error",
+              "errorMessage": "Error fetching data from API"
+            }
+          }
+        ]
+      },
+      {
+        "varName": "axios",
+        "value": null,
+        "overrides": null,
+        "importDetails": {
+          "defaultImport": true,
+          "name": "axios",
+          "moduleSpecifier": "axios",
+          "type": "importedFunction"
+        },
+        "type": "RecordedObject",
+        "id": "anhkrfbsh",
+        "constructorName": "Function",
+        "properties": [
+          {
+            "varName": "get",
+            "async": true,
+            "type": "RecordedFunction",
+            "calls": [
+              {
+                "inputs": [
+                  {
+                    "varName": "__temp_aoj5bh2or",
+                    "value": "https://jsonplaceholder.typicode.com/users/0",
+                    "overrides": null,
+                    "type": "RecordedPrimitive",
+                    "valueType": "string"
+                  }
+                ],
+                "callId": 2,
+                "type": "RecordedFunctionCallIO",
+                "output": {
+                  "mainFunction": false,
+                  "type": "RecordedError",
+                  "errorConstructorName": "Error",
+                  "errorMessage": "Request failed with status code 404"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "recId": {
+      "folderPath": "/home/juha/workspace/testent/simple-typescript-project-example/src",
+      "fileName": "apiFunctions.ts",
+      "functionName": "getUserDetailsByIdTryCatch",
+      "unitTestId": "aosqephah"
+    },
+    "recordings": [
+      {
+        "varName": "getUserDetailsByIdTryCatch",
+        "async": true,
+        "functionDetails": {
+          "type": "mainFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "userId",
+                "value": 1,
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "number"
+              }
+            ],
+            "callId": 1,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "varName": "__orig_output",
+              "id": "aq4f1lkoo",
+              "type": "RecordedObjectReference"
+            }
+          }
+        ]
+      },
+      {
+        "varName": "axios",
+        "value": null,
+        "overrides": null,
+        "importDetails": {
+          "defaultImport": true,
+          "name": "axios",
+          "moduleSpecifier": "axios",
+          "type": "importedFunction"
+        },
+        "type": "RecordedObject",
+        "id": "a7pfik1cm",
+        "constructorName": "Function",
+        "properties": [
+          {
+            "varName": "get",
+            "async": true,
+            "type": "RecordedFunction",
+            "calls": [
+              {
+                "inputs": [
+                  {
+                    "varName": "__temp_aoj5bh2or",
+                    "value": "https://jsonplaceholder.typicode.com/users/1",
+                    "overrides": null,
+                    "type": "RecordedPrimitive",
+                    "valueType": "string"
+                  }
+                ],
+                "callId": 2,
+                "type": "RecordedFunctionCallIO",
+                "output": {
+                  "varName": "response",
+                  "id": "anta693qo",
+                  "type": "RecordedObjectReference"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "varName": "response",
+        "value": null,
+        "overrides": null,
+        "importDetails": null,
+        "type": "RecordedObject",
+        "id": "anta693qo",
+        "constructorName": "Object",
+        "properties": [
+          {
+            "varName": "data",
+            "id": "a0qke637u",
+            "type": "RecordedObjectReference"
+          }
+        ]
+      },
+      {
+        "varName": "data",
+        "value": {
+          "id": 1,
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz",
+          "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+              "lat": "-37.3159",
+              "lng": "81.1496"
+            }
+          },
+          "phone": "1-770-736-8031 x56442",
+          "website": "hildegard.org",
+          "company": {
+            "name": "Romaguera-Crona",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+          }
+        },
+        "overrides": null,
+        "importDetails": null,
+        "type": "RecordedObject",
+        "id": "a0qke637u",
+        "constructorName": "Object",
+        "properties": []
+      },
+      {
+        "varName": "__orig_output",
+        "value": {
+          "username": "Bret",
+          "name": "Leanne Graham",
+          "email": "Sincere@april.biz"
+        },
+        "overrides": null,
+        "importDetails": null,
+        "type": "RecordedObject",
+        "id": "aq4f1lkoo",
+        "constructorName": "Object",
+        "properties": []
+      }
+    ]
+  }
+]

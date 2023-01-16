@@ -1,0 +1,10 @@
+[Running] Function escapeInCodeNewlines
+===== Input set number 0 =====
+Function inputs:
+code:  FILL 
+ THIS
+Function output:
+[ 'Escaped 1: FILL \n THIS' ]
+
+
+[Done] exited with code=0

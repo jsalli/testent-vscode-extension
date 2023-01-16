@@ -1,0 +1,395 @@
+{
+	"name": "testent-vscode-extension",
+	"displayName": "Testent",
+	"description": "Testent automates unit test writing for Typescript",
+	"version": "0.2.2",
+	"engines": {
+		"vscode": "^1.58.1"
+	},
+	"icon": "images/testent-icon.png",
+	"publisher": "Testent",
+	"author": {
+		"name": "Juha Sälli",
+		"email": "juha@testent.io"
+	},
+	"homepage": "https://testent.io/",
+	"bugs": {
+		"url": "https://github.com/testent-io/vscode-extension/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/testent-io/vscode-extension.git"
+	},
+	"preview": true,
+	"categories": [
+		"Other",
+		"Testing",
+		"Extension Packs"
+	],
+	"keywords": [
+		"unit testing",
+		"javascript",
+		"Typescript",
+		"coverage",
+		"jest",
+		"run function"
+	],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:typescript",
+		"onCommand:testent.clearTestentExtensionPreferences"
+	],
+	"main": "./dist/testent.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "testent.clearTestentExtensionPreferences",
+				"title": "Clear saved Testent extension preferences",
+				"category": "Testent"
+			}
+		],
+		"configuration": [
+			{
+				"id": "general",
+				"title": "General",
+				"order": 0,
+				"properties": {
+					"testent.general.sourceFolder": {
+						"type": "string",
+						"default": "./src",
+						"markdownDescription": "Specifies folder where source files are with relation to project root folder. If source is at root folder set empty string as value like \"\"",
+						"scope": "window",
+						"order": 10
+					}
+				}
+			},
+			{
+				"id": "logging",
+				"title": "Logging",
+				"order": 1,
+				"properties": {
+					"testent.logging.outputLevel": {
+						"type": "string",
+						"default": "errors",
+						"enum": [
+							"silent",
+							"errors",
+							"verbose",
+							"debug"
+						],
+						"enumDescriptions": [
+							"Logs nothing",
+							"Logs only errors",
+							"Logs all errors, warnings, and messages",
+							"Logs all errors, warnings, and messages with extra context useful for debugging"
+						],
+						"markdownDescription": "Specifies how much (if any) output will be sent to the GitLens output channel",
+						"scope": "window",
+						"order": 10
+					}
+				}
+			},
+			{
+				"id": "code-lens",
+				"title": "Testent Code Lens",
+				"order": 11,
+				"properties": {
+					"testent.codeLens.enabled": {
+						"type": "boolean",
+						"default": true,
+						"markdownDescription": "Specifies whether to provide any code lens.",
+						"scope": "window",
+						"order": 10
+					}
+				}
+			},
+			{
+				"id": "terminal-options",
+				"title": "Terminal Options",
+				"order": 2,
+				"properties": {
+					"testent.terminalOptions.windowsTerminalType": {
+						"type": "string",
+						"default": "powerShell",
+						"markdownDescription": "Specify the Windows terminal to use",
+						"enum": [
+							"powerShell",
+							"bashKind",
+							"cmd"
+						],
+						"enumDescriptions": [
+							"Your system uses Windows PowerShell to run commands",
+							"Your system uses Bash kind terminal to run commands",
+							"Your system uses Windows CMD to run commands"
+						],
+						"scope": "window",
+						"order": 11
+					},
+					"testent.terminalOptions.windowsTerminalExecutablePath": {
+						"type": "string",
+						"default": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+						"markdownDescription": "Specify absolutepath to the terminal executable",
+						"scope": "window",
+						"order": 12
+					},
+					"testent.terminalOptions.linuxTerminalType": {
+						"type": "string",
+						"default": "bash",
+						"markdownDescription": "Specify terminal to use in Linux",
+						"enum": [
+							"bash",
+							"sh"
+						],
+						"enumDescriptions": [
+							"Your system uses Bash to run commands",
+							"Your system uses Bourne (sh) to run commands"
+						],
+						"scope": "window",
+						"order": 13
+					},
+					"testent.terminalOptions.linuxTerminalExecutablePath": {
+						"type": "string",
+						"default": "",
+						"markdownDescription": "Specify absolutepath to the terminal executable or empty string if your default shell is supported",
+						"scope": "window",
+						"order": 14
+					},
+					"testent.terminalOptions.macTerminalType": {
+						"type": "string",
+						"default": "zsh",
+						"markdownDescription": "Specify terminal to use in Mac",
+						"enum": [
+							"zsh",
+							"bash"
+						],
+						"enumDescriptions": [
+							"Your system uses zsh to run commands",
+							"Your system uses Bash to run commands"
+						],
+						"scope": "window",
+						"order": 13
+					},
+					"testent.terminalOptions.macTerminalExecutablePath": {
+						"type": "string",
+						"default": "",
+						"markdownDescription": "Specify absolutepath to the terminal executable or empty string if your default shell is supported",
+						"scope": "window",
+						"order": 14
+					}
+				}
+			},
+			{
+				"id": "javascript-run-options",
+				"title": "Javascript Run Options",
+				"order": 1,
+				"properties": {
+					"testent.javascriptRunOptions.commonPreExecutable": {
+						"type": "string",
+						"default": "",
+						"markdownDescription": "Specifies things to add to the terminal execution command before the 'testent.runOptions.executable'",
+						"scope": "window",
+						"order": 3
+					},
+					"testent.javascriptRunOptions.envVarsWhenESModule": {
+						"type": "object",
+						"default": {
+							"NODE_OPTIONS": "--no-warnings --experimental-specifier-resolution=node --input-type module"
+						},
+						"markdownDescription": "Specifies environmental variables for when running ES module. Available variables are 'sourceFileDirAbsPath', 'tsConfigJsonFileAbsPath', 'tsNodeInstallationPath'. Surround vars with '{{' and '}}'",
+						"scope": "window",
+						"order": 5
+					},
+					"testent.javascriptRunOptions.envVarsWhenCommonJS": {
+						"type": "object",
+						"default": {
+							"NODE_OPTIONS": "--no-warnings --experimental-specifier-resolution=node"
+						},
+						"markdownDescription": "Specifies environmental variables for when running CommonJS module. Available variables are 'sourceFileDirAbsPath' and 'tsConfigJsonFileAbsPath'. Surround vars with '{{' and '}}'",
+						"scope": "window",
+						"order": 8
+					},
+					"testent.javascriptRunOptions.socketPort": {
+						"type": "number",
+						"default": 7123,
+						"markdownDescription": "Specifies port for socket communication between extension and user's instrumented code running in an child process.",
+						"scope": "window",
+						"order": 15
+					}
+				}
+			},
+			{
+				"id": "typescript-run-options",
+				"title": "Typescript Run Options",
+				"order": 1,
+				"properties": {
+					"testent.typescriptRunOptions.commonPreExecutable": {
+						"type": "string",
+						"default": "",
+						"markdownDescription": "Specifies things to add to the terminal execution command before the 'testent.runOptions.executable'",
+						"scope": "window",
+						"order": 3
+					},
+					"testent.typescriptRunOptions.envVarsWhenESModule": {
+						"type": "object",
+						"default": {
+							"NODE_OPTIONS": "--no-warnings --experimental-specifier-resolution=node --loader {{tsNodeInstallationPath}}ts-node/esm/transpile-only.mjs --input-type module",
+							"TS_NODE_TRANSPILE_ONLY": "true",
+							"TS_NODE_PROJECT": "{{tsConfigJsonFileAbsPath}}",
+							"TS_NODE_CWD": "{{sourceFileDirAbsPath}}"
+						},
+						"markdownDescription": "Specifies environmental variables for when running ES module. Available variables are 'sourceFileDirAbsPath', 'tsConfigJsonFileAbsPath', 'tsNodeInstallationPath'. Surround vars with '{{' and '}}'",
+						"scope": "window",
+						"order": 5
+					},
+					"testent.typescriptRunOptions.envVarsWhenCommonJS": {
+						"type": "object",
+						"default": {
+							"NODE_OPTIONS": "--no-warnings --experimental-specifier-resolution=node -r {{tsNodeInstallationPath}}ts-node/register/index.js",
+							"TS_NODE_TRANSPILE_ONLY": "true",
+							"TS_NODE_PROJECT": "{{tsConfigJsonFileAbsPath}}",
+							"TS_NODE_CWD": "{{sourceFileDirAbsPath}}"
+						},
+						"markdownDescription": "Specifies environmental variables for when running CommonJS module. Available variables are 'sourceFileDirAbsPath' and 'tsConfigJsonFileAbsPath'. Surround vars with '{{' and '}}'",
+						"scope": "window",
+						"order": 8
+					},
+					"testent.typescriptRunOptions.tsconfigRelPath": {
+						"type": "string",
+						"default": "./tsconfig.json",
+						"markdownDescription": "Specify relative path to tsconfig-file in relation to project's root path and the name of the file",
+						"scope": "window",
+						"order": 10
+					},
+					"testent.typescriptRunOptions.socketPort": {
+						"type": "number",
+						"default": 7123,
+						"markdownDescription": "Specifies port for socket communication between extension and user's instrumented code running in an child process.",
+						"scope": "window",
+						"order": 15
+					}
+				}
+			},
+			{
+				"id": "telemetry",
+				"title": "Telemetry",
+				"order": 10,
+				"properties": {
+					"testent.telemetry.enabled": {
+						"type": "boolean",
+						"default": true,
+						"markdownDescription": "Specifies whether to send telemetry data or not",
+						"scope": "window",
+						"order": 1
+					}
+				}
+			}
+		],
+		"languages": [
+			{
+				"id": "testent-vscode-extension-output",
+				"mimetypes": [
+					"text/x-code-output"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "testent-vscode-extension-output",
+				"scopeName": "testent-vscode-extension.output",
+				"path": "./syntaxes/testent-vscode-extension-output.tmLanguage"
+			}
+		]
+	},
+	"scripts": {
+		"clean": "rimraf ./dist/* tsconfig.tsbuildinfo package.tgz *.log .swc/* .eslintcache* tsconfig*.tsbuildinfo",
+		"compile": "rushx clean tsc -p tsconfig.json",
+		"build": "rushx compile && rushx build-types",
+		"build-types": "tsc -p tsconfig.build.types.json",
+		"pretest-webpack": "rimraf ./out/* && webpack -c webpack.config.test.js --env useEsbuild",
+		"test-dev": "pnpm bundle-dependencies-dev && pnpm bundle-extension-dev && pnpm pretest-webpack && node ./out/test/runTest.js",
+		"test-e2e": "pnpm pretest-webpack && node ./out/test/runTest.js",
+		"test-e2e-multiple-setups": "pnpm pretest-webpack && node ./out/test/runTestForMultipleSetups.js",
+		"test-unit": "jest",
+		"bundle-extension-dev": "webpack --mode development --env useEsbuild",
+		"bundle-extension-prod": "webpack --mode production --env obfuscate --env useEsbuild",
+		"bundle-extension-prod-no-obfuscate": "webpack --mode production --env useEsbuild",
+		"watch": "webpack --watch --mode development",
+		"watch-child-process-breakpoints": "webpack --watch --mode development --env childProcessBreakpoints",
+		"lint": "eslint src/**/*.ts",
+		"up-dependencies": "pnpm up",
+		"bundle-dependencies-dev": "rush bundle-stripped-down-ts-node & rush recorder-bundle-dev & rush record-globalvar-saver-bundle-dev & wait",
+		"bundle-dependencies-prod": "rush bundle-stripped-down-ts-node & rush recorder-bundle-prod & rush record-globalvar-saver-bundle-prod & wait",
+		"package-extension-dev": "pnpm clean && pnpm bundle-dependencies-dev && pnpm bundle-extension-dev && vsce package --no-dependencies --out publish/",
+		"package-extension-prod": "pnpm clean && pnpm bundle-dependencies-prod && pnpm bundle-extension-prod && vsce package --no-dependencies --out publish/",
+		"publish-extension": "vsce publish --no-dependencies --packagePath"
+	},
+	"dependencies": {
+		"@testent/code-preprocessor": "workspace:1.0.0",
+		"@testent/invoking-code-creator": "workspace:1.0.0",
+		"@testent/shared": "workspace:1.0.0",
+		"@testent/shared-code-processing": "workspace:1.0.0",
+		"@testent/shared-recording": "workspace:1.0.0",
+		"@testent/shared-test-generation": "workspace:1.0.0",
+		"@testent/test-generator": "workspace:1.0.0",
+		"fs-extra": "^10.1.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^4.9.4",
+		"detect-package-manager": "^2.0.1",
+		"p-locate": "^6.0.0",
+		"@vscode/extension-telemetry": "^0.6.2"
+	},
+	"devDependencies": {
+		"@swc/cli": "^0.1.57",
+		"@swc/core": "^1.2.183",
+		"@types/fs-extra": "^9.0.13",
+		"@types/node": "^17.0.33",
+		"@types/ts-expose-internals": "npm:ts-expose-internals@^4.9.4",
+		"@types/vscode": "^1.58.1",
+		"@typescript-eslint/eslint-plugin": "^5.46.1",
+		"@typescript-eslint/parser": "^5.23.0",
+		"circular-dependency-plugin": "^5.2.2",
+		"clean-webpack-plugin": "^4.0.0",
+		"copy-webpack-plugin": "^10.2.4",
+		"esbuild": "^0.14.39",
+		"esbuild-loader": "^2.18.0",
+		"eslint": "^8.15.0",
+		"eslint-cli": "^1.1.1",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-import-resolver-typescript": "^2.7.1",
+		"eslint-plugin-anti-trojan-source": "^1.1.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"javascript-obfuscator": "^4.0.0",
+		"json5": "^2.2.1",
+		"prettier": "^2.6.2",
+		"rimraf": "^3.0.2",
+		"ts-loader": "^9.3.0",
+		"vsce": "^2.15.0",
+		"webpack": "^5.72.1",
+		"webpack-bundle-analyzer": "^4.5.0",
+		"webpack-cli": "^4.9.2",
+		"webpack-obfuscator": "^3.5.1",
+		"@vscode/test-electron": "^2.1.5",
+		"mocha": "^10.0.0",
+		"@types/mocha": "^9.1.1",
+		"glob": "^8.0.3",
+		"@types/glob": "^7.2.0",
+		"@types/chai-as-promised": "^7.1.5",
+		"chai": "^4.3.6",
+		"chai-as-promised": "^7.1.1",
+		"tslib": "^2.4.0",
+		"jest": "^29.0.3",
+		"@types/jest": "^29.0.3",
+		"@babel/core": "^7.19.1",
+		"@babel/preset-env": "^7.19.1",
+		"@babel/preset-typescript": "^7.18.6",
+		"babel-jest": "^29.0.3",
+		"babel-plugin-module-resolver": "^4.1.0"
+	},
+	"__metadata": {
+		"id": "114e57dd-5ec9-455b-8636-6f7f93cf5bba",
+		"publisherDisplayName": "Testent",
+		"publisherId": "c23c6dcf-70ec-4ab8-bb3a-69e26dea173d",
+		"isPreReleaseVersion": false
+	}
+}

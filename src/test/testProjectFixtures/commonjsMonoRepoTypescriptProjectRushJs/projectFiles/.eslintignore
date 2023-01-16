@@ -1,0 +1,9 @@
+dist/*
+publish/*
+**/@types/*
+tsconfig.tsbuildinfo
+webpack.config.js
+obfuscateCode.js
+*.js
+*.mjs
+*.cjs

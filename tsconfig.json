@@ -1,0 +1,10 @@
+{
+	"extends": "../../tsconfig.json",
+	"include": [
+		"src/**/*",
+		"../shared-code-processing/src/**/*",
+		"../shared/src/**/*",
+		"../invoking-code-creator/src/**/*"
+	],
+	// "exclude": ["src/test/**/*"]
+}

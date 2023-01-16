@@ -1,0 +1,2 @@
+// usingShortArrowFuncInsideMap
+export default () => {};

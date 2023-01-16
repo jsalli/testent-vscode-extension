@@ -1,0 +1,56 @@
+[
+  {
+    "recId": {
+      "folderPath": "/home/juha/workspace/testent/simple-typescript-project-example/src/utils/stuff",
+      "fileName": "newLineModification.ts",
+      "functionName": "escapeInCodeNewlines",
+      "unitTestId": "aj2glp8ec"
+    },
+    "recordings": [
+      {
+        "varName": "escapeInCodeNewlines",
+        "async": false,
+        "functionDetails": {
+          "type": "mainFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "code",
+                "value": "FILL \n THIS",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              }
+            ],
+            "callId": 1,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "varName": "__orig_output",
+              "id": "afio34m8j",
+              "type": "RecordedArrayReference"
+            }
+          }
+        ]
+      },
+      {
+        "varName": "__orig_output",
+        "value": null,
+        "overrides": null,
+        "type": "RecordedArray",
+        "id": "afio34m8j",
+        "elements": [
+          {
+            "varName": "element_0",
+            "value": "Escaped 1: FILL \\n THIS",
+            "overrides": null,
+            "type": "RecordedPrimitive",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  }
+]

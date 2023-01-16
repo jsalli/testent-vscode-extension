@@ -1,0 +1,10 @@
+[Running] Function cutFromNewLine
+===== Input set number 0 =====
+Function inputs:
+text:  FILL 
+ THIS
+Function output:
+FILL 
+
+
+[Done] exited with code=0

@@ -1,0 +1,23 @@
+{
+	"name": "esmodule-basic-javascript-project-pnpm",
+	"description": "This repo shows an example of a simple Javascript project",
+	"version": "1.0.0",
+	"type": "module",
+	"main": "src/myFile.js",
+	"types": "src/myFile.js",
+
+	"license": "MIT",
+	"scripts": {
+		"start": "node --no-warnings --experimental-specifier-resolution=node ./src/main.js",
+		"test": "jest"
+	},
+	"dependencies": {
+		"axios": "^0.26.1"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.16.7",
+		"@babel/preset-env": "^7.16.7",
+		"babel-jest": "^27.4.6",
+		"jest": "^27.4.6"
+	}
+}

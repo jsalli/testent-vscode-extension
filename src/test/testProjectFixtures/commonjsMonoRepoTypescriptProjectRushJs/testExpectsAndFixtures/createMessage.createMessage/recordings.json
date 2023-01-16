@@ -1,0 +1,228 @@
+[
+  {
+    "recId": {
+      "folderPath": "/home/juha/workspace/testent/simple-typescript-project-example/src",
+      "fileName": "createMessage.ts",
+      "functionName": "createMessage",
+      "unitTestId": "a9khif7ei"
+    },
+    "recordings": [
+      {
+        "varName": "createMessage",
+        "async": false,
+        "functionDetails": {
+          "type": "mainFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "email",
+                "value": "FILL THIS",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              },
+              {
+                "varName": "name",
+                "value": "FILL THIS",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              },
+              {
+                "varName": "username",
+                "value": "FILL THIS",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              }
+            ],
+            "callId": 1,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "mainFunction": true,
+              "type": "RecordedError",
+              "errorConstructorName": "Error",
+              "errorMessage": "email is not valid"
+            }
+          }
+        ]
+      },
+      {
+        "varName": "validateEmail",
+        "async": false,
+        "functionDetails": {
+          "defaultImport": false,
+          "name": "validateEmail",
+          "moduleSpecifier": "./utils",
+          "type": "importedFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "__temp_avugnt0pc",
+                "value": "FILL THIS",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              }
+            ],
+            "callId": 2,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "varName": "__temp_a50kqqle2",
+              "value": false,
+              "overrides": null,
+              "type": "RecordedPrimitive",
+              "valueType": "boolean"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "recId": {
+      "folderPath": "/home/juha/workspace/testent/simple-typescript-project-example/src",
+      "fileName": "createMessage.ts",
+      "functionName": "createMessage",
+      "unitTestId": "ar4f1fo3g"
+    },
+    "recordings": [
+      {
+        "varName": "createMessage",
+        "async": false,
+        "functionDetails": {
+          "type": "mainFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "email",
+                "value": "test@test.com",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              },
+              {
+                "varName": "name",
+                "value": "Test Person",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              },
+              {
+                "varName": "username",
+                "value": "tperson",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              }
+            ],
+            "callId": 1,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "varName": "__orig_output",
+              "value": "User with email: test@test.com has name: \"Test Person\". This Her/his username is 'tperson'",
+              "overrides": null,
+              "type": "RecordedPrimitive",
+              "valueType": "string"
+            }
+          }
+        ]
+      },
+      {
+        "varName": "validateEmail",
+        "async": false,
+        "functionDetails": {
+          "defaultImport": false,
+          "name": "validateEmail",
+          "moduleSpecifier": "./utils",
+          "type": "importedFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "__temp_avugnt0pc",
+                "value": "test@test.com",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              }
+            ],
+            "callId": 2,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "varName": "__temp_a50kqqle2",
+              "value": true,
+              "overrides": null,
+              "type": "RecordedPrimitive",
+              "valueType": "boolean"
+            }
+          }
+        ]
+      },
+      {
+        "varName": "capitalizeFirstLetter",
+        "async": false,
+        "functionDetails": {
+          "defaultImport": false,
+          "name": "capitalizeFirstLetter",
+          "moduleSpecifier": "./utils",
+          "type": "importedFunction"
+        },
+        "type": "RecordedFunction",
+        "calls": [
+          {
+            "inputs": [
+              {
+                "varName": "__temp_aikpgnq3n",
+                "value": "Test",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              }
+            ],
+            "callId": 3,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "varName": "__temp_ajc2rf9r2",
+              "value": "Test",
+              "overrides": null,
+              "type": "RecordedPrimitive",
+              "valueType": "string"
+            }
+          },
+          {
+            "inputs": [
+              {
+                "varName": "__temp_aikpgnq3n",
+                "value": "Person",
+                "overrides": null,
+                "type": "RecordedPrimitive",
+                "valueType": "string"
+              }
+            ],
+            "callId": 4,
+            "type": "RecordedFunctionCallIO",
+            "output": {
+              "varName": "__temp_ajc2rf9r2",
+              "value": "Person",
+              "overrides": null,
+              "type": "RecordedPrimitive",
+              "valueType": "string"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
